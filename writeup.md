@@ -22,6 +22,7 @@ vehicle position estimates.
 
 [//]: # (Image References)
 
+[test_chessboard_calibration]: ./output_images/test_chessboard_calibration.jpg "Undistorted image after camera calibration"
 [test_camera_calibration]: ./output_images/test_camera_calibration.jpg "Undistorted image after camera calibration"
 [hls_gradient_magnitude_x_combination]: ./output_images/hls_gradient_magnitude_x_combination.jpg "Binary combination of HLS and x-oriented GRAY Gradient"
 [original_vs_warped]: ./output_images/original_vs_warped.jpg "Warp Example"
@@ -143,6 +144,9 @@ As we dont need to calibrate the camera again, `main.py` branches off this step 
             imgpoints = calibration_input_dict["imgpoints"]
             
 ```
+To test the proper calibration and the correction of the distortion, the following (left) image was used. Clearly the right image is free of distortion by inspection of the ceiling line. 
+
+![test_chessboard_calibration]
 
 ## Pipeline
 
@@ -215,7 +219,7 @@ I used a combination of color and gradient thresholds to generate a binary image
 
 ![hls_gradient_magnitude_x_combination][hls_gradient_magnitude_x_combination]
 
-### Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
+### Perspective transform
 
 The portion of the pipeline for the perspective transform is repeated below. The function takes as inputs an image (`combined_binary`), as well as source (`src`) and destination (`dst`) points.  
 
