@@ -144,7 +144,8 @@ As we dont need to calibrate the camera again, `main.py` branches off this step 
             
 ```
 
-##Pipeline
+## Pipeline
+
 The overall pipeline is shown below. All contained functions are in the `helper_advanced.py` file. 
 
 ```python
